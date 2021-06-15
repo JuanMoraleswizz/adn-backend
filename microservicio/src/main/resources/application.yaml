@@ -1,0 +1,21 @@
+jasypt:
+   encryptor:
+      password: ${jasyptpwd:CEIBA}
+      algorithm: PBEWithMD5AndDES
+
+server:
+   port: 8092
+   servlet:
+      context-path: /adn-ventas
+      session:
+         timeout: 21600s
+
+spring:
+   datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      jdbcUrl: jdbc:mysql://localhost:33060/adn
+      username: root
+      password: CEIBA
+      hikari:
+         poolName: pool

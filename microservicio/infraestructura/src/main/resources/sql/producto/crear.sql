@@ -1,0 +1,1 @@
+insert into productos (nombre, codigo,presentacion,url_imagen,valor_unitario) values (:nombre, :codigo, :presentacion, :urlImagen, :valorUnitario)
