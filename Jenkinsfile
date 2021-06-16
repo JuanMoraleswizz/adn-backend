@@ -6,7 +6,8 @@ pipeline {
     stages {
      stage("Unit test") {
                 steps {
-                    sh "./microservicio/gradlew test"
+                    sh "cd microservicio"
+                    sh "./gradlew test"
                 }
             }
         stage("Compile") {
