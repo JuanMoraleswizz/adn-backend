@@ -1,0 +1,1 @@
+insert into persona (nombres, identificacion,primer_apellido,segundo_apellido,sexo) values (:nombres, :identificacion, :primer_apellido, :segundo_apellido, :sexo)

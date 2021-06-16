@@ -3,7 +3,6 @@ package com.ceiba.producto.comando.manejador;
 import com.ceiba.producto.comando.ComandoProducto;
 import com.ceiba.producto.comando.Fabrica.FabricaProducto;
 import com.ceiba.usuario.modelo.entidad.Producto;
-import com.ceiba.usuario.modelo.entidad.Usuario;
 import com.ceiba.usuario.servicio.producto.ServicioCrearProducto;
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.manejador.ManejadorComandoRespuesta;

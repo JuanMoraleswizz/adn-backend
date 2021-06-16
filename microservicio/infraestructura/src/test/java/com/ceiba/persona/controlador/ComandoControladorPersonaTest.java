@@ -1,6 +1,10 @@
-package com.ceiba.producto.controlador;
+package com.ceiba.persona.controlador;
 
+import com.ceiba.ApplicationMock;
+import com.ceiba.persona.comando.ComandoPersona;
+import com.ceiba.persona.servicio.testdatabuilder.ComandoPersonaTestDataBuilder;
 import com.ceiba.producto.comando.ComandoProducto;
+import com.ceiba.producto.controlador.ComandoControladorProducto;
 import com.ceiba.producto.servicio.testdatabuilder.ComandoProductoTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
@@ -11,15 +15,14 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import com.ceiba.ApplicationMock;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes= ApplicationMock.class)
 @WebMvcTest(ComandoControladorProducto.class)
-public class ComandoControladorProductoTest {
+public class ComandoControladorPersonaTest {
     @Autowired
     private ObjectMapper objectMapper;
 
@@ -29,12 +32,12 @@ public class ComandoControladorProductoTest {
     @Test
     public void crear() throws Exception{
         // arrange
-        ComandoProducto producto = new ComandoProductoTestDataBuilder().build();
+        ComandoPersona persona = new ComandoPersonaTestDataBuilder().build();
 
         // act - assert
-        mocMvc.perform(post("/productos")
+        mocMvc.perform(post("/persona")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(producto)))
+                .content(objectMapper.writeValueAsString(persona)))
                 .andExpect(status().isOk())
                 .andExpect(content().json("{'valor': 2}"));
     }
@@ -43,12 +46,12 @@ public class ComandoControladorProductoTest {
     public void actualizar() throws Exception{
         // arrange
         Long id = 2L;
-        ComandoProducto usuario = new ComandoProductoTestDataBuilder().build();
+        ComandoPersona persona = new ComandoPersonaTestDataBuilder().build();
 
         // act - assert
-        mocMvc.perform(put("/productos/{id}",id)
+        mocMvc.perform(put("/persona/{id}",id)
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(usuario)))
+                .content(objectMapper.writeValueAsString(persona)))
                 .andExpect(status().isOk());
     }
 
@@ -58,7 +61,7 @@ public class ComandoControladorProductoTest {
         Long id = 2L;
 
         // act - assert
-        mocMvc.perform(delete("/productos/{id}",id)
+        mocMvc.perform(delete("/persona/{id}",id)
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());

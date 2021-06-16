@@ -6,7 +6,7 @@ import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 
 
 public class ServicioCrearProducto {
-    private static final String EL_PRODUCTO_YA_EXISTE_EN_EL_SISTEMA="El Producto ya existe en el sistema";
+    private static final String EL_PRODUCTO_YA_EXISTE_EN_EL_SISTEMA="La Persona ya existe en el sistema";
 
     private final RepositorioProducto repositorioProducto;
 
