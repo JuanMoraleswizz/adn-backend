@@ -43,7 +43,7 @@ pipeline {
                 dir('microservicio') {
                     sh './gradlew sonarqube\
                      -Dsonar.projectKey=adn \
-                     -Dsonar.host.url=http://localhost:9091 \
+                     -Dsonar.host.url=http://localhost:9000 \
                      -Dsonar.login=a48a1d07923a65d5152d195d521dccd3f96fc129'
                     }
                 }
