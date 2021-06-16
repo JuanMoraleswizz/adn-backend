@@ -19,25 +19,30 @@ pipeline {
                 steps {
             dir('microservicio') {
                     sh "pwd"
+                     sh "./gradlew test"
                   }
-                    sh "./gradlew test"
+
                 }
             }
         stage("Code coverage") {
             steps {
-        	    sh "gradle jacocoTestReport"
+            dir('microservicio') {
+        	    sh "./gradlew jacocoTestReport"
         	 	publishHTML (target: [
          	        reportDir: 'build/reports/jacoco/test/html',
          			reportFiles: 'index.html',
          			reportName: 'JacocoReport'
          	    ])
-         		sh "./microservicio/gradlew jacocoTestCoverageVerification"
+         		sh "./gradlew jacocoTestCoverageVerification"
+         	}
          	}
         }
         stage('SonarQube analysis') {
             steps {
                 withSonarQubeEnv('SONAR800') {
-                    sh './microservicio/gradlew sonarqube'
+                dir('microservicio') {
+                    sh './gradlew sonarqube'
+                    }
                 }
             }
         }
