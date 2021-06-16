@@ -7,6 +7,7 @@ pipeline {
      stage("Unit test") {
                 steps {
                     sh "cd microservicio"
+                    sh "ls"
                     sh "./gradlew test"
                 }
             }
