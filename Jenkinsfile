@@ -3,18 +3,20 @@ pipeline {
     triggers {
         pollSCM('* * * * *')
     }
+    dir('microservicio') {
+          sh "pwd"
+        }
     stages {
      stage("Unit test") {
                 steps {
-                    sh "cd microservicio"
-                    sh "ls"
+
                     sh "./gradlew test"
                 }
             }
         stage("Compile") {
             steps {
 
-                sh "./microservicio/gradlew compileJava"
+                sh "./gradlew compileJava"
             }
         }
 
