@@ -15,3 +15,16 @@ create table productos (
  valor_unitario DOUBLE,
  primary key (id)
 );
+create table persona (
+ id int(11) not null auto_increment,
+ nombres varchar(100) not null,
+ identificacion varchar(45) not null,
+ primer_apellido varchar(30),
+ segundo_apellido varchar(30),
+ sexo varchar(10),
+ primary key (id)
+);
+
+
+
+

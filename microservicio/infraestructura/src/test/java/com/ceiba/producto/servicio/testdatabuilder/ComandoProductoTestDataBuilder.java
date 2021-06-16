@@ -1,7 +1,6 @@
-package com.ceiba.servicio.testdatabuilder;
+package com.ceiba.producto.servicio.testdatabuilder;
 
 import com.ceiba.producto.comando.ComandoProducto;
-import com.ceiba.producto.controlador.ComandoControladorProductoTest;
 
 import java.util.UUID;
 
