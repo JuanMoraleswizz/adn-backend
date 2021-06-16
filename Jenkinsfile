@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage("Compile") {
             steps {
-                sh "./gradlew compileJava"
+                sh "./microservicio/gradlew compileJava"
             }
         }
         stage("Unit test") {
