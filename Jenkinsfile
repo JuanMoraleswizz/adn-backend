@@ -5,17 +5,18 @@ pipeline {
     }
 
     stages {
-     stage("Unit test") {
 
         stage("Compile") {
             steps {
-                 dir('microservicio') {
-                                    sh "pwd"
-                      }
-                sh "./gradlew compileJava"
+                dir('microservicio') {
+                    sh "pwd"
+                     sh "./gradlew compileJava"
+                  }
+
             }
         }
-    steps {
+  stage("Unit test") {
+                steps {
             dir('microservicio') {
                     sh "pwd"
                   }
