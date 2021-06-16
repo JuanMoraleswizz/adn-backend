@@ -41,7 +41,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('SONAR800') {
                 dir('microservicio') {
-                    sh './gradlew sonarqube'
+                    sh './gradlew sonarqube -Dsonar.login=b934a24f6ae1c58cedd6c8793fa0dbbe18c855d7'
                     }
                 }
             }
