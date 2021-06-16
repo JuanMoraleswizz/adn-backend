@@ -3,23 +3,25 @@ pipeline {
     triggers {
         pollSCM('* * * * *')
     }
-    dir('microservicio') {
-          sh "pwd"
-        }
+
     stages {
      stage("Unit test") {
-                steps {
 
-                    sh "./gradlew test"
-                }
-            }
         stage("Compile") {
             steps {
-
+                 dir('microservicio') {
+                                    sh "pwd"
+                      }
                 sh "./gradlew compileJava"
             }
         }
-
+    steps {
+            dir('microservicio') {
+                    sh "pwd"
+                  }
+                    sh "./gradlew test"
+                }
+            }
         stage("Code coverage") {
             steps {
         	    sh "gradle jacocoTestReport"
