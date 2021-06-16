@@ -41,7 +41,10 @@ pipeline {
             steps {
                 withSonarQubeEnv('SONAR800') {
                 dir('microservicio') {
-                    sh './gradlew sonarqube'
+                    sh './gradlew sonarqube\
+                     -Dsonar.projectKey=adn \
+                     -Dsonar.host.url=http://localhost:9091 \
+                     -Dsonar.login=2c64d2daa2249ba6a272df0c2cda0baee9b6f5e7'
                     }
                 }
             }
