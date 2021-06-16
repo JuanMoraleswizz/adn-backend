@@ -1,20 +1,22 @@
 pipeline {
     agent any
-   
+    chmod +x gradlew
     triggers {
         pollSCM('* * * * *')
     }
+    stage("Unit test") {
+                steps {
+                    sh "./microservicio/gradlew test"
+                }
+            }
     stages {
         stage("Compile") {
             steps {
+
                 sh "./microservicio/gradlew compileJava"
             }
         }
-        stage("Unit test") {
-            steps {
-                sh "gradle test"
-            }
-        }
+
         stage("Code coverage") {
             steps {
         	    sh "gradle jacocoTestReport"
@@ -23,13 +25,13 @@ pipeline {
          			reportFiles: 'index.html',
          			reportName: 'JacocoReport'
          	    ])
-         		sh "gradle jacocoTestCoverageVerification"
+         		sh "./microservicio/gradlew jacocoTestCoverageVerification"
          	}
         }
         stage('SonarQube analysis') {
             steps {
                 withSonarQubeEnv('SONAR800') {
-                    sh 'gradle sonarqube'
+                    sh './microservicio/gradlew sonarqube'
                 }
             }
         }
