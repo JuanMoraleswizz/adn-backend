@@ -30,21 +30,20 @@ public class ComandoControladorPersona {
     }
 
     @PostMapping
-    @ApiOperation("Crear Usuario")
+    @ApiOperation("Crear Persona")
     public ComandoRespuesta<Long> crear(@RequestBody ComandoPersona comandoPersona) {
         return manejadorCrearPersona.ejecutar(comandoPersona);
     }
 
     @DeleteMapping(value="/{id}")
-    @ApiOperation("Eliminar Producto")
+    @ApiOperation("Eliminar Persona")
     public void eliminar(@PathVariable Long id) {
         manejadorEliminarPersona.ejecutar(id);
     }
 
     @PutMapping(value="/{id}")
-    @ApiOperation("Actualizar producto")
+    @ApiOperation("Actualizar Persona")
     public void actualizar(@RequestBody ComandoPersona comandoPersona,@PathVariable Long id) {
-        System.out.println("entro al service");
         comandoPersona.setId(id);
         manejadorActualizarPersona.ejecutar(comandoPersona);
     }

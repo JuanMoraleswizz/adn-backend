@@ -1,2 +1,2 @@
-select id,nombres,identificacion,primer_apellido,segundo_apellido,sexo
-from persona
+select id,id_persona,fecha
+from orden

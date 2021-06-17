@@ -4,7 +4,7 @@ import com.ceiba.dominio.ValidadorArgumento;
 import lombok.Getter;
 
 @Getter
-public class OrdenDetalle {
+public class ArticulosOrden {
     private static final String SE_DEBE_INGRESAR_EL_PRODUCTO = "Se debe selecionar un product";
     private static final String LA_CANTIDAD_MINIMA_ES_1 = "Se debe selecionar un cliente";
     private static final String EL_VALOR_MINIMO_ES_1 = "Se debe ingresar un valor mayor a 0";
@@ -18,8 +18,8 @@ public class OrdenDetalle {
     private Double iva;
     private Double descuento;
 
-    public OrdenDetalle(Long id, Long idOrden, Long idProducto, Double valorUnitario,
-                        Double cantidad, Double subTotal, Double iva, Double descuento) {
+    public ArticulosOrden(Long id, Long idOrden, Long idProducto, Double valorUnitario,
+                          Double cantidad, Double subTotal, Double iva, Double descuento) {
 
 
         ValidadorArgumento.validarObligatorio(idProducto,SE_DEBE_INGRESAR_EL_PRODUCTO);

@@ -1,7 +1,3 @@
-update persona
-set nombres = :nombres,
-	 identificacion= :identificacion,
-	primer_apellido = :primerApellido,
-	segundo_apellido = :segundoApellido,
-	sexo = :sexo
+delete
+from orden_detalle
 where id = :id

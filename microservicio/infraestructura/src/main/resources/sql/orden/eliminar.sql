@@ -1,3 +1,3 @@
 delete 
-from persona
+from orden
 where id = :id

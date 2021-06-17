@@ -1,1 +1,1 @@
-insert into persona (nombres, identificacion,primer_apellido,segundo_apellido,sexo) values (:nombres, :identificacion, :primerApellido, :segundoApellido, :sexo)
+insert into orden (id_persona,fecha) values ( :idPersona,  :fecha)
