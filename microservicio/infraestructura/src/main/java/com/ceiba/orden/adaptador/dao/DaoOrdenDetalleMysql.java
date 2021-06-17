@@ -2,7 +2,6 @@ package com.ceiba.orden.adaptador.dao;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.persona.adaptador.dao.MapeoPersona;
 import com.ceiba.usuario.modelo.dto.DtoOrdenDetalle;
 import com.ceiba.usuario.puerto.dao.DaoOrdenDetalle;
 import org.springframework.stereotype.Component;

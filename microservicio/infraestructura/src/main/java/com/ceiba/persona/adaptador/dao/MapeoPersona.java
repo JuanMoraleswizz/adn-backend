@@ -2,9 +2,7 @@ package com.ceiba.persona.adaptador.dao;
 
 import com.ceiba.infraestructura.jdbc.MapperResult;
 import com.ceiba.usuario.modelo.dto.DtoPersona;
-import com.ceiba.usuario.modelo.entidad.Persona;
 import org.springframework.jdbc.core.RowMapper;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

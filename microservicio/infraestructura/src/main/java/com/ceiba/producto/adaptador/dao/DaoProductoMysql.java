@@ -1,6 +1,5 @@
 package com.ceiba.producto.adaptador.dao;
 
-import com.ceiba.persona.adaptador.dao.MapeoPersona;
 import com.ceiba.usuario.modelo.dto.DtoProducto;
 import com.ceiba.usuario.puerto.dao.DaoProducto;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;

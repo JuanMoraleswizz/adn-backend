@@ -2,7 +2,6 @@ package com.ceiba.orden.adaptador.dao;
 
 import com.ceiba.infraestructura.jdbc.MapperResult;
 import com.ceiba.usuario.modelo.dto.DtoOrdenDetalle;
-import com.ceiba.usuario.modelo.entidad.Orden;
 import com.ceiba.usuario.modelo.entidad.Producto;
 import org.springframework.jdbc.core.RowMapper;
 

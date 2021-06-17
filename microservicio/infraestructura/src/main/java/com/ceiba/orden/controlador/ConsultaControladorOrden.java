@@ -2,9 +2,7 @@ package com.ceiba.orden.controlador;
 
 import com.ceiba.orden.consulto.ManejadorListaOrden;
 import com.ceiba.orden.consulto.ManejadorListaOrdenPorCliente;
-import com.ceiba.persona.consulta.ManejadorListarPersona;
 import com.ceiba.usuario.modelo.dto.DtoOrden;
-import com.ceiba.usuario.modelo.dto.DtoPersona;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;

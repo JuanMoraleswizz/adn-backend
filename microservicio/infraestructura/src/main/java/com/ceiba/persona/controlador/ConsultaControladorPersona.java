@@ -2,9 +2,7 @@ package com.ceiba.persona.controlador;
 
 import com.ceiba.persona.consulta.ManejadorListarPersona;
 import com.ceiba.persona.consulta.ManejadorListarPersonaPorIdentificacion;
-import com.ceiba.producto.consulta.ManejadorListarProductos;
 import com.ceiba.usuario.modelo.dto.DtoPersona;
-import com.ceiba.usuario.modelo.dto.DtoProducto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
