@@ -2,8 +2,6 @@ package com.ceiba.usuario.modelo.entidad;
 
 import lombok.Getter;
 
-import java.lang.ref.SoftReference;
-
 import static com.ceiba.dominio.ValidadorArgumento.*;
 
 @Getter

@@ -1,7 +1,5 @@
 package com.ceiba.orden.comando;
 
-import com.ceiba.usuario.modelo.entidad.Orden;
-import com.ceiba.usuario.modelo.entidad.Producto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,7 +1,6 @@
 package com.ceiba.usuario.servicio.orden;
 
 import com.ceiba.usuario.puerto.repositorio.RepositorioOrden;
-import com.ceiba.usuario.puerto.repositorio.RepositorioPersona;
 
 
 public class ServicioEliminarOrden {
