@@ -1,7 +1,6 @@
 package com.ceiba.usuario.puerto.repositorio;
 
 import com.ceiba.usuario.modelo.entidad.Orden;
-import com.ceiba.usuario.modelo.entidad.Persona;
 
 public interface RepositorioOrden {
     /**

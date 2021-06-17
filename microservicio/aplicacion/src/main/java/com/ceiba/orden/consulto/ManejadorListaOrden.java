@@ -1,9 +1,7 @@
 package com.ceiba.orden.consulto;
 
 import com.ceiba.usuario.modelo.dto.DtoOrden;
-import com.ceiba.usuario.modelo.dto.DtoPersona;
 import com.ceiba.usuario.puerto.dao.DaoOrden;
-import com.ceiba.usuario.puerto.dao.DaoPersona;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
