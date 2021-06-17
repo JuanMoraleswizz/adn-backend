@@ -24,7 +24,23 @@ create table persona (
  sexo varchar(10),
  primary key (id)
 );
-
+create table orden (
+ id int(11) not null auto_increment,
+ id_persona int(11) not null,
+ fecha datetime not null,
+ primary key (id)
+);
+create table orden_detalle (
+ id int(11) not null auto_increment,
+ id_orden int(11) not null,
+ id_producto int(11) not null,
+ valor_unitario double,
+ cantidad double,
+ sub_total double,
+ iva double,
+ descuento double,
+ primary key (id)
+);
 
 
 

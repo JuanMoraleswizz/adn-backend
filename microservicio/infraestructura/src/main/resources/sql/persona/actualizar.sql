@@ -1,8 +1,7 @@
 update persona
 set nombres = :nombres,
 	 identificacion= :identificacion,
-	nombres = :nombres,
-	primer_apellido = :primer_apellido,
-	segundo_apellido = :segundo_apellido,
+	primer_apellido = :primerApellido,
+	segundo_apellido = :segundoApellido,
 	sexo = :sexo
 where id = :id
