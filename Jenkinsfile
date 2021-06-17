@@ -43,7 +43,7 @@ pipeline {
                 withSonarQubeEnv('SONAR800') {
                     dir('microservicio') {
                     sh './gradlew sonarqube \
-                    -Dsonar.login='69e097e14061cf6ea52aa2151a09157b45b8378d'
+                    -Dsonar.login=69e097e14061cf6ea52aa2151a09157b45b8378d'
                     }
 
                 }
