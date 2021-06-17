@@ -15,7 +15,6 @@ public class ComandoOrdenDetalle {
     private Long idProducto;
     private Double valorUnitario;
     private Double cantidad;
-    private Double subTotal;
     private Double iva;
     private Double descuento;
 }

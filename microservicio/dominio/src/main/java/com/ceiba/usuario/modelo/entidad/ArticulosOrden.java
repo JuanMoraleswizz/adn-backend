@@ -14,18 +14,16 @@ public class ArticulosOrden {
     private Long idProducto;
     private Double valorUnitario;
     private Double cantidad;
-    private Double subTotal;
     private Double iva;
     private Double descuento;
 
     public ArticulosOrden(Long id, Long idOrden, Long idProducto, Double valorUnitario,
-                          Double cantidad, Double subTotal, Double iva, Double descuento) {
+                          Double cantidad, Double iva, Double descuento) {
 
 
         ValidadorArgumento.validarObligatorio(idProducto,SE_DEBE_INGRESAR_EL_PRODUCTO);
         ValidadorArgumento.validarPositivo(valorUnitario,EL_VALOR_NO_PUEDE_SER_NEGATIVO);
         ValidadorArgumento.validarPositivo(cantidad, LA_CANTIDAD_MINIMA_ES_1);
-        ValidadorArgumento.validarPositivo(subTotal,EL_VALOR_NO_PUEDE_SER_NEGATIVO);
         ValidadorArgumento.validarPositivo(iva,EL_VALOR_NO_PUEDE_SER_NEGATIVO);
         ValidadorArgumento.validarPositivo(descuento,EL_VALOR_NO_PUEDE_SER_NEGATIVO);
 
@@ -34,7 +32,6 @@ public class ArticulosOrden {
         this.idProducto = idProducto;
         this.valorUnitario = valorUnitario;
         this.cantidad = cantidad;
-        this.subTotal = subTotal;
         this.iva = iva;
         this.descuento = descuento;
     }

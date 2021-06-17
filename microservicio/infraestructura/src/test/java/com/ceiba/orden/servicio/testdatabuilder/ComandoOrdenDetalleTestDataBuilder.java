@@ -9,7 +9,6 @@ public class ComandoOrdenDetalleTestDataBuilder {
     private Long idProducto;
     private Double valorUnitario;
     private Double cantidad;
-    private Double subTotal;
     private Double iva;
     private Double descuento;
 
@@ -18,12 +17,11 @@ public class ComandoOrdenDetalleTestDataBuilder {
         this.idProducto = 1L;
         this.valorUnitario = 1000.0;
         this.cantidad = 1.0;
-        this.subTotal = 1000.0;
         this.iva = 1.0;
         this.descuento = 1.0;
     }
     public ComandoOrdenDetalle buildDetalle(){
-        return new ComandoOrdenDetalle(id,idOrden,idProducto,valorUnitario,cantidad,subTotal,iva,descuento);
+        return new ComandoOrdenDetalle(id,idOrden,idProducto,valorUnitario,cantidad,iva,descuento);
     }
 
 }

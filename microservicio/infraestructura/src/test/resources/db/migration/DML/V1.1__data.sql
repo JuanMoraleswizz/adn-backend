@@ -5,5 +5,5 @@ insert into persona (identificacion,nombres,primer_apellido,segundo_apellido, se
 values('1038125422','JUAN DAVID','MORALES','MUÑOZ','MASCULINO');
 insert into orden (id_persona,fecha)
 values(1,now());
-insert into orden_detalle (id_orden,id_producto,valor_unitario,cantidad,sub_total,iva,descuento)
-values(1,1,1000.0,1.0,1000.0,0.0,0.0);
+insert into orden_detalle (id_orden,id_producto,valor_unitario,cantidad,iva,descuento)
+values(1,1,1000.0,1.0,0.0,0.0);

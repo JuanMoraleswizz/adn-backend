@@ -14,7 +14,7 @@ public class FabricaOrdenDetalle {
       List<ArticulosOrden> listaOrdenesDetalle = new ArrayList<>();
         comandoOrden.getListaDetalle().forEach(detalle ->{
             listaOrdenesDetalle.add(new ArticulosOrden(detalle.getId(),detalle.getIdOrden(),detalle.getIdProducto(),
-                    detalle.getValorUnitario(),detalle.getCantidad(), detalle.getSubTotal(),detalle.getIva(),
+                    detalle.getValorUnitario(),detalle.getCantidad(),detalle.getIva(),
                     detalle.getDescuento()));
         });
         return listaOrdenesDetalle;

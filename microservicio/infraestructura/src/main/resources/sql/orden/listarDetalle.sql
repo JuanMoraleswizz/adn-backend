@@ -1,2 +1,2 @@
-select id,id_orden, id_producto, valor_unitario, cantidad,sub_total, iva,descuento
+select id,id_orden, id_producto, valor_unitario, cantidad, iva,descuento
 from orden_detalle

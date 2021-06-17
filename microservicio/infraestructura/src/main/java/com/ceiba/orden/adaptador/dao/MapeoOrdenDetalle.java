@@ -15,10 +15,9 @@ public class MapeoOrdenDetalle implements RowMapper<DtoOrdenDetalle>, MapperResu
          Long idProducto = resultSet.getLong("id_producto") ;
          Double valorUnitario = resultSet.getDouble("valor_unitario");
          Double cantidad = resultSet.getDouble("cantidad");
-         Double subTotal = resultSet.getDouble("sub_total");
          Double iva = resultSet.getDouble("iva");
          Double descuento = resultSet.getDouble("descuento");
 
-        return new DtoOrdenDetalle(id,idOrden,idProducto,valorUnitario,cantidad,subTotal,iva,descuento);
+        return new DtoOrdenDetalle(id,idOrden,idProducto,valorUnitario,cantidad,iva,descuento);
     }
 }
