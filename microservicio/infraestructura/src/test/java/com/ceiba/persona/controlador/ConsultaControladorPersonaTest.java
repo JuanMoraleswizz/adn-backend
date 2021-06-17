@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class ConsultaControladorPersonaTest {
     @Autowired
     private MockMvc mocMvc;
-
+    private  final String identificacion = "1038125422";
     @Test
     public void listar() throws Exception {
         // arrange
@@ -33,5 +33,16 @@ public class ConsultaControladorPersonaTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].identificacion", is("1038125422")));
+    }
+    @Test
+    public void listarPorIdentificacion() throws Exception {
+        // arrange
+
+        // act - assert
+        mocMvc.perform(get("/persona/{identificacion}",identificacion)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].identificacion", is(identificacion)));
     }
 }

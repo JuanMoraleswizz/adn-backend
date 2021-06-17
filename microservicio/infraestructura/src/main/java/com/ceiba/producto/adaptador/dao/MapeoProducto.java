@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 import com.ceiba.infraestructura.jdbc.MapperResult;
 
 public class MapeoProducto implements RowMapper<DtoProducto>, MapperResult  {
+
     @Override
     public DtoProducto mapRow(ResultSet resultSet, int rowNum) throws SQLException {
         Long id = resultSet.getLong("id");

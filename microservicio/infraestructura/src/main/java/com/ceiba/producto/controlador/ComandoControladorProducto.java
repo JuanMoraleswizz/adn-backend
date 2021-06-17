@@ -27,7 +27,7 @@ public class ComandoControladorProducto {
     }
 
     @PostMapping
-    @ApiOperation("Crear Usuario")
+    @ApiOperation("Crear Producto")
     public ComandoRespuesta<Long> crear(@RequestBody ComandoProducto comandoProducto) {
         return manejadorCrearProducto.ejecutar(comandoProducto);
     }

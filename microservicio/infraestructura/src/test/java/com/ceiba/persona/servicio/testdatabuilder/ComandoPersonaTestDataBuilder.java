@@ -14,7 +14,6 @@ public class ComandoPersonaTestDataBuilder {
     private String segundoApellido;
     private String sexo;
     public ComandoPersonaTestDataBuilder(){
-
         this.identificacion = UUID.randomUUID().toString();
         this.nombres = "Juan David";
         this.primerApellido = "Morales";
