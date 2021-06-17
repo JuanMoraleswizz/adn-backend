@@ -12,11 +12,11 @@ public class FabricaOrdenDetalle {
 
     public List<ArticulosOrden> crear(ComandoOrden comandoOrden){
       List<ArticulosOrden> listaOrdenesDetalle = new ArrayList<>();
-        comandoOrden.getListaDetalle().forEach(detalle ->{
+        comandoOrden.getListaDetalle().forEach(detalle ->
             listaOrdenesDetalle.add(new ArticulosOrden(detalle.getId(),detalle.getIdOrden(),detalle.getIdProducto(),
                     detalle.getValorUnitario(),detalle.getCantidad(),detalle.getIva(),
-                    detalle.getDescuento()));
-        });
+                    detalle.getDescuento()))
+        );
         return listaOrdenesDetalle;
     }
 }

@@ -25,10 +25,8 @@ public class ManejadorCrearOrden {
 
     public ComandoRespuesta<Long> ejecutar(ComandoOrden comandoOrden) {
         Long id = this.servicioCrearOrden.ejecutar(fabricaOrden.crear(comandoOrden));
-        comandoOrden.getListaDetalle().forEach(detalle -> { detalle.setIdOrden(id); });
-        fabricaOrdenDetalle.crear(comandoOrden).forEach(detalle ->{
-            servicioCrearOrdenDetalle.ejecutar(detalle);
-        });
+        comandoOrden.getListaDetalle().forEach(detalle ->  detalle.setIdOrden(id) );
+        fabricaOrdenDetalle.crear(comandoOrden).forEach(detalle -> servicioCrearOrdenDetalle.ejecutar(detalle));
         return new ComandoRespuesta<>(id);
     }
 
