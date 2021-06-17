@@ -27,7 +27,6 @@ public class ComandoControladorOrden {
     @PostMapping
     @ApiOperation("Crear Orden")
     public ComandoRespuesta<Long> crear(@RequestBody ComandoOrden comandoOrden) {
-       System.out.println("llego al servicio");
         return manejadorCrearOrden.ejecutar(comandoOrden);
     }
 

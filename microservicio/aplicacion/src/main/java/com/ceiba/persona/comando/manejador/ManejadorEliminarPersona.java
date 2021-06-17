@@ -1,7 +1,6 @@
 package com.ceiba.persona.comando.manejador;
 
-import com.ceiba.persona.comando.fabrica.FabricaPersona;
-import com.ceiba.usuario.servicio.persona.ServicioActualizarPersona;
+
 import com.ceiba.usuario.servicio.persona.ServicioEliminarPersona;
 import org.springframework.stereotype.Component;
 

@@ -1,7 +1,6 @@
 package com.ceiba.usuario.modelo.dto;
 
-import com.ceiba.usuario.modelo.entidad.Orden;
-import com.ceiba.usuario.modelo.entidad.Producto;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
