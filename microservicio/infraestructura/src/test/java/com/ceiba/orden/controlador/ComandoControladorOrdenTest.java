@@ -1,11 +1,8 @@
-package com.ceiba.orden.contralador;
+package com.ceiba.orden.controlador;
 
 import com.ceiba.ApplicationMock;
 import com.ceiba.orden.comando.ComandoOrden;
-import com.ceiba.orden.controlador.ComandoControladorOrden;
-import com.ceiba.orden.servicio.testdatabuilder.ComandoOrdenDetalleTestDataBuilder;
 import com.ceiba.orden.servicio.testdatabuilder.ComandoOrdenTestDataBuilder;
-import com.ceiba.persona.servicio.testdatabuilder.ComandoPersonaTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;

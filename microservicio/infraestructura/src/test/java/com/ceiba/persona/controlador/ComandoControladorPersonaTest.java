@@ -45,7 +45,7 @@ public class ComandoControladorPersonaTest {
     @Test
     public void actualizar() throws Exception{
         // arrange
-        Long id = 2L;
+        Long id = 1L;
         ComandoPersona persona = new ComandoPersonaTestDataBuilder().build();
 
         // act - assert

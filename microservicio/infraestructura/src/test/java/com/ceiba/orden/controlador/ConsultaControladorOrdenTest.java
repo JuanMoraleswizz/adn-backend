@@ -1,8 +1,6 @@
-package com.ceiba.orden.contralador;
+package com.ceiba.orden.controlador;
 
 import com.ceiba.ApplicationMock;
-import com.ceiba.orden.controlador.ConsultaControladorOrden;
-import com.ceiba.persona.controlador.ConsultaControladorPersona;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

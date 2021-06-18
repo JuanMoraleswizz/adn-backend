@@ -18,16 +18,16 @@ import java.time.LocalDateTime;
 
 public class ServicioCrearOrdenTest {
 
+    OrdenTestDataBuilder ordenTestDataBuilder = new OrdenTestDataBuilder();
     @Test
     public void validarQueLaListaNoEsteVacia(){
-        OrdenTestDataBuilder ordenTestDataBuilder = new OrdenTestDataBuilder();
         BasePrueba.assertThrows(() -> ordenTestDataBuilder.build(), ExcepcionValorObligatorio.class, "La lista de articulos no puedeser vacia");
     }
 
     @Test
     public void validarQueLaPersonaExista(){
-        OrdenTestDataBuilder ordenTestDataBuilder = new OrdenTestDataBuilder();
         ordenTestDataBuilder.conPersona(null);
+        BasePrueba.assertThrows(() -> ordenTestDataBuilder.build(), ExcepcionValorObligatorio.class, "La lista de articulos no puedeser vacia");
     }
 
 }
