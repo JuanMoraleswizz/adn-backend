@@ -1,6 +1,6 @@
 package com.ceiba.orden.adaptador.dto;
 
-import com.ceiba.persona.comando.ComandoPersona;
+
 
 
 import java.time.LocalDateTime;
@@ -9,6 +9,18 @@ public class OrdenEntity {
     private Long id;
     private Long idPersona;
     private LocalDateTime fecha;
+
+    public Long getId() {
+        return id;
+    }
+
+    public Long getIdPersona() {
+        return idPersona;
+    }
+
+    public LocalDateTime getFecha() {
+        return fecha;
+    }
 
     public void setId(Long id) {
         this.id = id;

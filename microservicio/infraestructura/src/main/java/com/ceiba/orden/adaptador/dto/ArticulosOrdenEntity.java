@@ -2,6 +2,9 @@ package com.ceiba.orden.adaptador.dto;
 
 import com.ceiba.usuario.modelo.entidad.Orden;
 import com.ceiba.usuario.modelo.entidad.Producto;
+import jdk.nashorn.internal.objects.annotations.Getter;
+import jdk.nashorn.internal.objects.annotations.Setter;
+
 
 public class ArticulosOrdenEntity {
     private Long id;
@@ -19,6 +22,62 @@ public class ArticulosOrdenEntity {
         this.valorUnitario = valorUnitario;
         this.cantidad = cantidad;
         this.iva = iva;
+        this.descuento = descuento;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getIdOrden() {
+        return idOrden;
+    }
+
+    public void setIdOrden(Long idOrden) {
+        this.idOrden = idOrden;
+    }
+
+    public Long getIdProducto() {
+        return idProducto;
+    }
+
+    public void setIdProducto(Long idProducto) {
+        this.idProducto = idProducto;
+    }
+
+    public Double getValorUnitario() {
+        return valorUnitario;
+    }
+
+    public void setValorUnitario(Double valorUnitario) {
+        this.valorUnitario = valorUnitario;
+    }
+
+    public Double getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Double cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public Double getIva() {
+        return iva;
+    }
+
+    public void setIva(Double iva) {
+        this.iva = iva;
+    }
+
+    public Double getDescuento() {
+        return descuento;
+    }
+
+    public void setDescuento(Double descuento) {
         this.descuento = descuento;
     }
 }

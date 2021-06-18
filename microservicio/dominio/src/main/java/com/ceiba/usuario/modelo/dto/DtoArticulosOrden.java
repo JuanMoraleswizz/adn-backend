@@ -8,8 +8,8 @@ import lombok.Getter;
 @Getter
 public class DtoArticulosOrden {
     private Long id;
-    private DtoOrden orden;
-    private DtoProducto producto;
+    private Long orden;
+    private Long producto;
     private Double valorUnitario;
     private Double cantidad;
     private Double iva;
