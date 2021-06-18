@@ -41,8 +41,8 @@ public class ConsultaControladorPersonaTest {
         // act - assert
         mocMvc.perform(get("/persona/{identificacion}",identificacion)
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(1)));
+                .andExpect(status().isOk());
+
 
     }
 }
