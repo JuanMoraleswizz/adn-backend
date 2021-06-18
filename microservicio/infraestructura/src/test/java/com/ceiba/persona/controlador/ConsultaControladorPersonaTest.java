@@ -31,8 +31,8 @@ public class ConsultaControladorPersonaTest {
         mocMvc.perform(get("/persona")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].identificacion", is("1038125422")));
+                .andExpect(jsonPath("$", hasSize(1)));
+
     }
     @Test
     public void listarPorIdentificacion() throws Exception {
@@ -42,7 +42,7 @@ public class ConsultaControladorPersonaTest {
         mocMvc.perform(get("/persona/{identificacion}",identificacion)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].identificacion", is(identificacion)));
+                .andExpect(jsonPath("$", hasSize(1)));
+
     }
 }
