@@ -44,9 +44,7 @@ pipeline {
                     dir('microservicio') {
                    //  sh './gradlew sonarqube \
                  //   -Dsonar.login=69e097e14061cf6ea52aa2151a09157b45b8378d'
-                        sh "${tool name: 'SonarScanner',
-                                     type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner
-                                      -Dproject.settings=sonar-project.properties"
+                       sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner  -Dproject.settings=sonar-project.properties"
                     }
 
                 }
