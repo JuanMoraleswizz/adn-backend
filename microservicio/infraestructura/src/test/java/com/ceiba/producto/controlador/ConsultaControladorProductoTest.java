@@ -23,6 +23,7 @@ public class ConsultaControladorProductoTest {
 
     @Autowired
     private MockMvc mocMvc;
+    private static final String codigo = "test";
 
     @Test
     public void listar() throws Exception {
@@ -30,6 +31,16 @@ public class ConsultaControladorProductoTest {
 
         // act - assert
         mocMvc.perform(get("/productos/")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].nombre", is("producto1")));
+
+
+    }
+    @Test
+    public void listarPorCodigo() throws Exception {
+        mocMvc.perform(get("/productos/{codigo}",codigo)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))

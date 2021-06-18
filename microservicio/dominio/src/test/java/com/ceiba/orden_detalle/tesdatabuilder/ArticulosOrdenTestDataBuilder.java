@@ -33,7 +33,18 @@ public class ArticulosOrdenTestDataBuilder {
         return this;
     }
 
+    public ArticulosOrdenTestDataBuilder conValorUnitario(Double valorUnitario){
+        this.valorUnitario = valorUnitario;
+        return this;
+    }
+
+    public ArticulosOrdenTestDataBuilder conProducto(Producto producto){
+        this.idProducto = producto;
+        return this;
+    }
     public ArticulosOrden build(){
         return new ArticulosOrden(id,idOrden,idProducto,valorUnitario,cantidad,iva,descuento);
     }
+
+
 }
