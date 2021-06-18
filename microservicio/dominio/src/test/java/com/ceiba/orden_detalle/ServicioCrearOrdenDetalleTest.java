@@ -10,7 +10,7 @@ import org.junit.Test;
 public class ServicioCrearOrdenDetalleTest {
 
     private static final Double VALOR_0 =0.0;
-
+    private static final Double VALOR_NEGATIVO =-1.0;
     @Test
     public void elValorDelArticuloDebeSerMayoA0(){
        ArticulosOrdenTestDataBuilder articulosOrdenTestDataBuilder = new ArticulosOrdenTestDataBuilder();
@@ -20,10 +20,16 @@ public class ServicioCrearOrdenDetalleTest {
 
     @Test
     public void validarQueTengaUnProductoAsociado(){
-
         ArticulosOrdenTestDataBuilder articulosOrdenTestDataBuilder = new ArticulosOrdenTestDataBuilder();
         articulosOrdenTestDataBuilder.conProducto(null);
         BasePrueba.assertThrows(() -> articulosOrdenTestDataBuilder.build(), ExcepcionValorObligatorio.class, "Se debe selecionar un producto");
+    }
+
+    @Test
+    public void elValorDelIvaNoPuedeSerNegativo(){
+        ArticulosOrdenTestDataBuilder articulosOrdenTestDataBuilder = new ArticulosOrdenTestDataBuilder();
+        articulosOrdenTestDataBuilder.conValorIva(VALOR_NEGATIVO);
+        BasePrueba.assertThrows(() -> articulosOrdenTestDataBuilder.build(), ExcepcionValorInvalido.class, "El valor no puede ser menor a 0");
 
     }
 }

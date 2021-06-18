@@ -37,7 +37,10 @@ public class ArticulosOrdenTestDataBuilder {
         this.valorUnitario = valorUnitario;
         return this;
     }
-
+    public ArticulosOrdenTestDataBuilder conValorIva(Double iva){
+        this.iva = valorUnitario;
+        return this;
+    }
     public ArticulosOrdenTestDataBuilder conProducto(Producto producto){
         this.idProducto = producto;
         return this;
