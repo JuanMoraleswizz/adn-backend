@@ -1,10 +1,5 @@
 package com.ceiba.orden.adaptador.dto;
 
-import com.ceiba.usuario.modelo.entidad.Orden;
-import com.ceiba.usuario.modelo.entidad.Producto;
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
-
 
 public class ArticulosOrdenEntity {
     private Long id;

@@ -10,7 +10,7 @@ import java.util.List;
 
 @Component
 public class FabricaOrdenDetalle {
-    public FabricaOrdenDetalle() {
+    private FabricaOrdenDetalle() {
     }
 
     public static List<ArticulosOrden> crear(List<ComandoOrdenDetalle> listaComandoArticulosOrdenes) {
