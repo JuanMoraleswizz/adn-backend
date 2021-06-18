@@ -20,4 +20,31 @@ public class ArticulosOrdenEntity {
         this.descuento = descuento;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public Long getIdOrden() {
+        return idOrden;
+    }
+
+    public Long getIdProducto() {
+        return idProducto;
+    }
+
+    public Double getValorUnitario() {
+        return valorUnitario;
+    }
+
+    public Double getCantidad() {
+        return cantidad;
+    }
+
+    public Double getIva() {
+        return iva;
+    }
+
+    public Double getDescuento() {
+        return descuento;
+    }
 }

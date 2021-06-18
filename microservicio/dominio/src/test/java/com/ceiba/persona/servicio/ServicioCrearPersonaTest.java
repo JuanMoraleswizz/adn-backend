@@ -5,8 +5,11 @@ import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.dominio.excepcion.ExcepcionLongitudValor;
 import com.ceiba.persona.servicio.testdatabuilder.PersonaTestDataBuilder;
 import com.ceiba.producto.servicio.testdatabuilder.ProductoTestDataBuilder;
+import com.ceiba.usuario.modelo.entidad.Persona;
 import com.ceiba.usuario.modelo.entidad.Producto;
+import com.ceiba.usuario.puerto.repositorio.RepositorioPersona;
 import com.ceiba.usuario.puerto.repositorio.RepositorioProducto;
+import com.ceiba.usuario.servicio.persona.ServicioActualizarPersona;
 import com.ceiba.usuario.servicio.producto.ServicioActualizarProducto;
 import com.ceiba.usuario.servicio.producto.ServicioCrearProducto;
 import com.ceiba.usuario.servicio.testdatabuilder.UsuarioTestDataBuilder;
@@ -17,7 +20,7 @@ public class ServicioCrearPersonaTest {
 
 
     @Test
-    public void validarClaveLongitudMenor7Test() {
+    public void validarIdentificacionLongitudMenor7Test() {
         // arrange
         PersonaTestDataBuilder personaTestDataBuilder = new PersonaTestDataBuilder().conIdentificacion("103812");
         // act - assert
@@ -25,14 +28,14 @@ public class ServicioCrearPersonaTest {
     }
 
     @Test
-    public void validarProductoExistenciaPreviaTest() {
+    public void validarPersonaPreviaTest() {
         // arrange
-        Producto producto = new ProductoTestDataBuilder().conCodigo("test").build();
-        RepositorioProducto repositorioProducto = Mockito.mock(RepositorioProducto.class);
-        Mockito.when(repositorioProducto.existe(Mockito.anyString())).thenReturn(true);
-        ServicioCrearProducto servicioCrearProducto = new ServicioCrearProducto(repositorioProducto);
+        Persona persona = new PersonaTestDataBuilder().conIdentificacion("1038125422").build();
+        RepositorioPersona repositorioPersona = Mockito.mock(RepositorioPersona.class);
+        Mockito.when(repositorioPersona.existe(Mockito.anyString())).thenReturn(true);
+        ServicioActualizarPersona servicioActualizarPersona = new ServicioActualizarPersona(repositorioPersona);
         // act - assert
-        BasePrueba.assertThrows(() -> servicioCrearProducto.ejecutar(producto), ExcepcionDuplicidad.class,"La Persona ya existe en el sistema");
+        BasePrueba.assertThrows(() -> servicioActualizarPersona.ejecutar(persona), ExcepcionDuplicidad.class,"La Persona ya existe en el sistema");
     }
 
 }

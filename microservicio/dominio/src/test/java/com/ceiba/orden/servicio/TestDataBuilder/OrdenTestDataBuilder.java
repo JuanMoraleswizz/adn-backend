@@ -33,6 +33,11 @@ public class OrdenTestDataBuilder {
         return this;
     }
 
+    public OrdenTestDataBuilder conPersona(Persona persona){
+        this.persona = persona;
+        return this;
+    }
+
     public Orden build(){
         return new Orden(id,persona,fecha,listaArticulos);
     }

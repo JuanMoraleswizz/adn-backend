@@ -2,22 +2,26 @@ package com.ceiba.persona.servicio;
 
 import com.ceiba.BasePrueba;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
+import com.ceiba.persona.servicio.testdatabuilder.PersonaTestDataBuilder;
 import com.ceiba.producto.servicio.testdatabuilder.ProductoTestDataBuilder;
+import com.ceiba.usuario.modelo.entidad.Persona;
 import com.ceiba.usuario.modelo.entidad.Producto;
+import com.ceiba.usuario.puerto.repositorio.RepositorioPersona;
 import com.ceiba.usuario.puerto.repositorio.RepositorioProducto;
+import com.ceiba.usuario.servicio.persona.ServicioActualizarPersona;
 import com.ceiba.usuario.servicio.producto.ServicioActualizarProducto;
 import org.junit.Test;
 import org.mockito.Mockito;
 
 public class ServicioActualizarPersonaTest {
     @Test
-    public void validarProductoExistenciaPreviaTest() {
+    public void validarPersonaPreviaTest() {
         // arrange
-        Producto producto = new ProductoTestDataBuilder().conCodigo("test").build();
-        RepositorioProducto repositorioProducto = Mockito.mock(RepositorioProducto.class);
-        Mockito.when(repositorioProducto.existe(Mockito.anyString())).thenReturn(true);
-        ServicioActualizarProducto servicioActualizarProducto = new ServicioActualizarProducto(repositorioProducto);
+        Persona persona = new PersonaTestDataBuilder().conIdentificacion("1038125422").build();
+        RepositorioPersona repositorioPersona = Mockito.mock(RepositorioPersona.class);
+        Mockito.when(repositorioPersona.existe(Mockito.anyString())).thenReturn(true);
+        ServicioActualizarPersona servicioActualizarPersona = new ServicioActualizarPersona(repositorioPersona);
         // act - assert
-        BasePrueba.assertThrows(() -> servicioActualizarProducto.ejecutar(producto), ExcepcionDuplicidad.class,"El Producto ya existe en el sistema");
+        BasePrueba.assertThrows(() -> servicioActualizarPersona.ejecutar(persona), ExcepcionDuplicidad.class,"La Persona ya existe en el sistema");
     }
 }

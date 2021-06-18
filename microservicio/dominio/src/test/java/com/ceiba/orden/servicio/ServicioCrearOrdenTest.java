@@ -24,4 +24,10 @@ public class ServicioCrearOrdenTest {
         BasePrueba.assertThrows(() -> ordenTestDataBuilder.build(), ExcepcionValorObligatorio.class, "La lista de articulos no puedeser vacia");
     }
 
+    @Test
+    public void validarQueLaPersonaExista(){
+        OrdenTestDataBuilder ordenTestDataBuilder = new OrdenTestDataBuilder();
+        ordenTestDataBuilder.conPersona(null);
+    }
+
 }
