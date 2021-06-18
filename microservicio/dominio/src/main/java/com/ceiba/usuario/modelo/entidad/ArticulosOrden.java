@@ -10,26 +10,25 @@ public class ArticulosOrden {
     private static final String EL_VALOR_MINIMO_ES_1 = "Se debe ingresar un valor mayor a 0";
     private static final String EL_VALOR_NO_PUEDE_SER_NEGATIVO = "El valor no puede ser menor a 0";
     private Long id;
-    private Long idOrden;
-    private Long idProducto;
+    private Orden orden;
+    private Producto producto;
     private Double valorUnitario;
     private Double cantidad;
     private Double iva;
     private Double descuento;
 
-    public ArticulosOrden(Long id, Long idOrden, Long idProducto, Double valorUnitario,
+    public ArticulosOrden(Long id, Orden orden, Producto producto, Double valorUnitario,
                           Double cantidad, Double iva, Double descuento) {
 
-
-        ValidadorArgumento.validarObligatorio(idProducto,SE_DEBE_INGRESAR_EL_PRODUCTO);
+        ValidadorArgumento.validarObligatorio(producto.getId(),SE_DEBE_INGRESAR_EL_PRODUCTO);
         ValidadorArgumento.validarPositivo(valorUnitario,EL_VALOR_NO_PUEDE_SER_NEGATIVO);
         ValidadorArgumento.validarPositivo(cantidad, LA_CANTIDAD_MINIMA_ES_1);
         ValidadorArgumento.validarPositivo(iva,EL_VALOR_NO_PUEDE_SER_NEGATIVO);
         ValidadorArgumento.validarPositivo(descuento,EL_VALOR_NO_PUEDE_SER_NEGATIVO);
 
         this.id = id;
-        this.idOrden = idOrden;
-        this.idProducto = idProducto;
+        this.orden = orden;
+        this.producto = producto;
         this.valorUnitario = valorUnitario;
         this.cantidad = cantidad;
         this.iva = iva;

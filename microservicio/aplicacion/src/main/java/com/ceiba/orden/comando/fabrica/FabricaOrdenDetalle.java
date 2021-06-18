@@ -1,7 +1,10 @@
 package com.ceiba.orden.comando.fabrica;
 
 import com.ceiba.orden.comando.ComandoOrden;
+import com.ceiba.orden.comando.ComandoOrdenDetalle;
+import com.ceiba.producto.comando.Fabrica.FabricaProducto;
 import com.ceiba.usuario.modelo.entidad.ArticulosOrden;
+import com.ceiba.usuario.modelo.entidad.Producto;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -10,10 +13,11 @@ import java.util.List;
 @Component
 public class FabricaOrdenDetalle {
 
-    public List<ArticulosOrden> crear(ComandoOrden comandoOrden){
+    public static List<ArticulosOrden> crear(List<ComandoOrdenDetalle> listaComandoArticulosOrdenes){
       List<ArticulosOrden> listaOrdenesDetalle = new ArrayList<>();
-        comandoOrden.getListaDetalle().forEach(detalle ->
-            listaOrdenesDetalle.add(new ArticulosOrden(detalle.getId(),detalle.getIdOrden(),detalle.getIdProducto(),
+      FabricaProducto fabricaProducto = new FabricaProducto();
+        listaComandoArticulosOrdenes.forEach(detalle ->
+            listaOrdenesDetalle.add(new ArticulosOrden(detalle.getId(),null, fabricaProducto.crear(detalle.getProducto()),
                     detalle.getValorUnitario(),detalle.getCantidad(),detalle.getIva(),
                     detalle.getDescuento()))
         );

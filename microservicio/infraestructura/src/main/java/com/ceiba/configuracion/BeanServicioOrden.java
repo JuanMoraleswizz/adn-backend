@@ -12,18 +12,15 @@ public class BeanServicioOrden {
     public ServicioCrearOrden servicioCrearOrden(RepositorioOrden repositorioOrden){
         return new ServicioCrearOrden(repositorioOrden);
     }
-    @Bean
-    public ServicioCrearOrdenDetalle servicioCrearOrdenDetalle(RepositorioOrdenDetalle repositorioOrdenDetalle){
-        return new ServicioCrearOrdenDetalle(repositorioOrdenDetalle);
-    }
+
     @Bean
     public ServicioEliminarOrden servicioEliminarOrden(RepositorioOrden repositorioOrden){
         return  new ServicioEliminarOrden(repositorioOrden);
     }
 
     @Bean
-    public ServicioEliminarOrdenDetalle servicioEliminarOrdenDetalle(RepositorioOrdenDetalle repositorioOrdenDetalle){
-        return  new ServicioEliminarOrdenDetalle(repositorioOrdenDetalle);
+    public ServicioEliminarOrdenDetalle servicioEliminarOrdenDetalle(RepositorioOrden repositorioOrden){
+        return  new ServicioEliminarOrdenDetalle(repositorioOrden);
     }
 
     @Bean

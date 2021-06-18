@@ -6,10 +6,10 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class DtoOrdenDetalle {
+public class DtoArticulosOrden {
     private Long id;
-    private Long idOrden;
-    private Long idProducto;
+    private DtoOrden orden;
+    private DtoProducto producto;
     private Double valorUnitario;
     private Double cantidad;
     private Double iva;

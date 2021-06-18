@@ -1,1 +1,1 @@
-insert into orden (id_persona,fecha) values ( :idPersona,  :fecha)
+insert into orden (id_persona,fecha) values ( :idPersona, :fecha)

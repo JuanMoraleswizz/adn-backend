@@ -1,15 +1,15 @@
 package com.ceiba.orden.adaptador.dao;
 
 import com.ceiba.infraestructura.jdbc.MapperResult;
-import com.ceiba.usuario.modelo.dto.DtoOrdenDetalle;
+import com.ceiba.usuario.modelo.dto.DtoArticulosOrden;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class MapeoOrdenDetalle implements RowMapper<DtoOrdenDetalle>, MapperResult {
+public class MapeoArticulosOrden implements RowMapper<DtoArticulosOrden>, MapperResult {
     @Override
-    public DtoOrdenDetalle mapRow(ResultSet resultSet, int rowNum) throws SQLException {
+    public DtoArticulosOrden mapRow(ResultSet resultSet, int rowNum) throws SQLException {
          Long id = resultSet.getLong("id");
          Long idOrden = resultSet.getLong("id_orden");
          Long idProducto = resultSet.getLong("id_producto") ;
@@ -18,6 +18,7 @@ public class MapeoOrdenDetalle implements RowMapper<DtoOrdenDetalle>, MapperResu
          Double iva = resultSet.getDouble("iva");
          Double descuento = resultSet.getDouble("descuento");
 
-        return new DtoOrdenDetalle(id,idOrden,idProducto,valorUnitario,cantidad,iva,descuento);
+         //new DtoArticulosOrden(id,idOrden,idProducto,valorUnitario,cantidad,iva,descuento);
+        return null;
     }
 }

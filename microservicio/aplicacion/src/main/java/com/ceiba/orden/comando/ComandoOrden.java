@@ -1,5 +1,7 @@
 package com.ceiba.orden.comando;
 
+import com.ceiba.persona.comando.ComandoPersona;
+import com.ceiba.usuario.modelo.entidad.Persona;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 public class ComandoOrden {
     private Long id;
-    private Long idPersona;
+    private ComandoPersona persona;
     private LocalDateTime fecha;
     List<ComandoOrdenDetalle> listaDetalle;
 }

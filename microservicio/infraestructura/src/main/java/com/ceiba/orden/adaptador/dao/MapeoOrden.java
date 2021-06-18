@@ -12,7 +12,10 @@ public class MapeoOrden implements RowMapper<DtoOrden>, MapperResult {
     public DtoOrden mapRow(ResultSet resultSet, int rowNum) throws SQLException {
         Long id = resultSet.getLong("id");
         Long idPersona = resultSet.getLong("id_persona");
+        String cliente = resultSet.getString("cliente");
+        String identificacion = resultSet.getString("identificacion");
         LocalDateTime fecha = extraerLocalDateTime(resultSet, "fecha");
-        return new DtoOrden(id,idPersona,fecha);
+        Double valorTotal = resultSet.getDouble("valor_total");
+        return  new DtoOrden(id,idPersona,cliente,identificacion,fecha,valorTotal);
     }
 }

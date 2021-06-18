@@ -1,14 +1,15 @@
 package com.ceiba.usuario.servicio.orden;
 
-import com.ceiba.usuario.puerto.repositorio.RepositorioOrdenDetalle;
+import com.ceiba.usuario.puerto.repositorio.RepositorioOrden;
+
 
 public class ServicioEliminarOrdenDetalle {
-    private final RepositorioOrdenDetalle repositorioOrdenDetalle;
+    private final RepositorioOrden repositorioOrden;
 
-    public ServicioEliminarOrdenDetalle(RepositorioOrdenDetalle repositorioOrdenDetalle){
-        this.repositorioOrdenDetalle = repositorioOrdenDetalle;
+    public ServicioEliminarOrdenDetalle(RepositorioOrden repositorioOrden){
+        this.repositorioOrden = repositorioOrden;
     }
 
-    public void ejecutar(Long id){ repositorioOrdenDetalle.eliminar(id);}
+    public void ejecutar(Long id){ repositorioOrden.eliminar(id);}
 
 }
