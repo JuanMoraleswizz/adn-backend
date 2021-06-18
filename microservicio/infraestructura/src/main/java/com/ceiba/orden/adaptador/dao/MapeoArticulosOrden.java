@@ -18,7 +18,7 @@ public class MapeoArticulosOrden implements RowMapper<DtoArticulosOrden>, Mapper
          Double iva = resultSet.getDouble("iva");
          Double descuento = resultSet.getDouble("descuento");
 
-         //new DtoArticulosOrden(id,idOrden,idProducto,valorUnitario,cantidad,iva,descuento);
-        return null;
+        return new DtoArticulosOrden(id,null,null,valorUnitario,cantidad,iva,descuento);
+
     }
 }

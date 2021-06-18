@@ -4,7 +4,6 @@ import com.ceiba.orden.comando.ComandoOrden;
 import com.ceiba.orden.comando.ComandoOrdenDetalle;
 import com.ceiba.producto.comando.Fabrica.FabricaProducto;
 import com.ceiba.usuario.modelo.entidad.ArticulosOrden;
-import com.ceiba.usuario.modelo.entidad.Producto;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

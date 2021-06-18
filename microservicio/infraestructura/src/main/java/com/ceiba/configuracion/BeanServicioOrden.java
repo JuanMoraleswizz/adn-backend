@@ -1,7 +1,6 @@
 package com.ceiba.configuracion;
 
 import com.ceiba.usuario.puerto.repositorio.RepositorioOrden;
-import com.ceiba.usuario.puerto.repositorio.RepositorioOrdenDetalle;
 import com.ceiba.usuario.servicio.orden.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -10,7 +10,7 @@ import java.util.List;
 @Getter
 public class Orden {
 
-    private final String LA_LISTA_NO_PUEDE_SER_VACIA="La lista de articulos no puedeser vacia";
+    private static final  String LA_LISTA_NO_PUEDE_SER_VACIA="La lista de articulos no puedeser vacia";
     private Long id;
     private Persona persona;
     private LocalDateTime fecha;
