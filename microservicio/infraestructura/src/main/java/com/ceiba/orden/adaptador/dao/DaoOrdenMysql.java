@@ -2,6 +2,7 @@ package com.ceiba.orden.adaptador.dao;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
+import com.ceiba.usuario.modelo.dto.DtoArticulosOrden;
 import com.ceiba.usuario.modelo.dto.DtoOrden;
 import com.ceiba.usuario.puerto.dao.DaoOrden;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -16,6 +17,8 @@ public class DaoOrdenMysql implements DaoOrden {
     private static String sqlListar;
     @SqlStatement(namespace="orden", value="listarPorCliente")
     private static String sqlListarPorCliente;
+    @SqlStatement(namespace="orden", value="listarDetalle")
+    private static String sqlListarArticulosPorOrden;
 
     public DaoOrdenMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate){
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -31,5 +34,12 @@ public class DaoOrdenMysql implements DaoOrden {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("idPersona", idPersona);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarPorCliente,paramSource, new MapeoOrden());
+    }
+
+    @Override
+    public List<DtoArticulosOrden> articulosPorOrden(Long idOrden) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("idOrden", idOrden);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarArticulosPorOrden,paramSource, new MapeoArticulosOrden());
     }
 }

@@ -2,6 +2,8 @@ package com.ceiba.orden.controlador;
 
 import com.ceiba.orden.consulto.ManejadorListaOrden;
 import com.ceiba.orden.consulto.ManejadorListaOrdenPorCliente;
+import com.ceiba.orden.consulto.ManejadorListarArticulosPorOrden;
+import com.ceiba.usuario.modelo.dto.DtoArticulosOrden;
 import com.ceiba.usuario.modelo.dto.DtoOrden;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -18,9 +20,12 @@ import java.util.List;
 public class ConsultaControladorOrden {
     private final ManejadorListaOrden manejadorListaOrden;
     private final ManejadorListaOrdenPorCliente manejadorListaOrdenPorCliente;
-    public ConsultaControladorOrden(ManejadorListaOrden manejadorListaOrden, ManejadorListaOrdenPorCliente manejadorListaOrdenPorCliente) {
+    private final ManejadorListarArticulosPorOrden manejadorListarArticulosPorOrden;
+    public ConsultaControladorOrden(ManejadorListaOrden manejadorListaOrden, ManejadorListaOrdenPorCliente manejadorListaOrdenPorCliente,
+                                    ManejadorListarArticulosPorOrden manejadorListarArticulosPorOrden) {
         this.manejadorListaOrden = manejadorListaOrden;
         this.manejadorListaOrdenPorCliente= manejadorListaOrdenPorCliente;
+        this.manejadorListarArticulosPorOrden =manejadorListarArticulosPorOrden;
     }
     @GetMapping
     @ApiOperation("Listar Orden")
@@ -32,6 +37,12 @@ public class ConsultaControladorOrden {
     @ApiOperation("Listar Orden por cliente")
     public List<DtoOrden> listarPorCliente(@PathVariable("idPersona") Long idPersona) {
         return this.manejadorListaOrdenPorCliente.ejecutar(idPersona);
+    }
+
+    @GetMapping(value = "/articulo/{idOrden}")
+    @ApiOperation("Listar articulos por Orden")
+    public List<DtoArticulosOrden> listarArticulosPorOrden(@PathVariable("idOrden") Long idOrden) {
+        return this.manejadorListarArticulosPorOrden.ejecutar(idOrden);
     }
 
 }

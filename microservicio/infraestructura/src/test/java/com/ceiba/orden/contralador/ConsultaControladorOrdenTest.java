@@ -24,6 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class ConsultaControladorOrdenTest {
 
    private  final  Integer ID_PERSONA = 1;
+    private  final  Integer ID_ORDEN = 1;
     @Autowired
     private MockMvc mocMvc;
 
@@ -49,5 +50,17 @@ public class ConsultaControladorOrdenTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].idPersona", is(ID_PERSONA)));
+    }
+
+    @Test
+    public void listarArticulosPorOrden() throws Exception {
+        // arrange
+
+        // act - assert
+        mocMvc.perform(get("/orden/articulo/{idOrden}",ID_ORDEN)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].orden", is(ID_ORDEN)));
     }
 }
