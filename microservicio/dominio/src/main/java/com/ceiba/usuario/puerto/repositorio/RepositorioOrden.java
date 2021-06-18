@@ -12,25 +12,6 @@ public interface RepositorioOrden {
      */
     Long crear(Orden orden);
 
-    /**
-     * Permite actualizar una orden
-     *
-     * @param orden
-     */
-    void actualizar(Orden orden);
-
-    /**
-     * Permite actualizar un articulo de la orden
-     *
-     * @param articuloOrden
-     */
-    void actualizar(ArticulosOrden articuloOrden);
-
-    /**
-     * Permite eliminar articulos orden
-     *
-     * @param idOrden
-     */
     void eliminarPorOrden(Long idOrden);
 
     /**
@@ -47,11 +28,4 @@ public interface RepositorioOrden {
      */
     void eliminarArticulo(Long id);
 
-    /**
-     * Permite validar si una orden ya existe
-     *
-     * @param id
-     * @return si existe o no
-     */
-    boolean existe(Long id);
 }

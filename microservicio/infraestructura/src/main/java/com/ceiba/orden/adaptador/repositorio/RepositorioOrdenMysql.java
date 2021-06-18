@@ -59,27 +59,6 @@ public class RepositorioOrdenMysql implements RepositorioOrden {
     }
 
     @Override
-    public void actualizar(Orden orden) {
-        MapSqlParameterSource ordenParamSource = new MapSqlParameterSource();
-        ordenParamSource.addValue("id",orden.getId());
-        ordenParamSource.addValue("idPersona", orden.getPersona().getId());
-        ordenParamSource.addValue("fecha", orden.getFecha());
-        customNamedParameterJdbcTemplate.actualizar(orden, sqlActualizar);
-    }
-
-    @Override
-    public void actualizar(ArticulosOrden articuloOrden) {
-        MapSqlParameterSource articuloOrdenParamSource = new MapSqlParameterSource();
-        articuloOrdenParamSource.addValue("id", articuloOrden.getId());
-        articuloOrdenParamSource.addValue("idOrden", articuloOrden.getId());
-        articuloOrdenParamSource.addValue("idProducto", articuloOrden.getProducto().getId());
-        articuloOrdenParamSource.addValue("valorUnitario", articuloOrden.getValorUnitario());
-        articuloOrdenParamSource.addValue("iva", articuloOrden.getIva());
-        articuloOrdenParamSource.addValue("descuento", articuloOrden.getDescuento());
-        customNamedParameterJdbcTemplate.crear(articuloOrdenParamSource, sqlActualizarDetalle);
-    }
-
-    @Override
     public void eliminarPorOrden(Long idOrden) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("idOrden", idOrden);
@@ -102,10 +81,5 @@ public class RepositorioOrdenMysql implements RepositorioOrden {
 
     }
 
-    @Override
-    public boolean existe(Long id) {
-        MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("id", id);
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, paramSource, Boolean.class);
-    }
+
 }

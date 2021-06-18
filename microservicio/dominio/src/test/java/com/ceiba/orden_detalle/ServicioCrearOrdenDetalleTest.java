@@ -7,7 +7,7 @@ import com.ceiba.orden.servicio.TestDataBuilder.OrdenTestDataBuilder;
 import com.ceiba.orden_detalle.tesdatabuilder.ArticulosOrdenTestDataBuilder;
 import org.junit.Test;
 
-public class ServicioCrearOrdenDetalle {
+public class ServicioCrearOrdenDetalleTest {
 
     private static final Double VALOR_0 =0.0;
 
