@@ -1,7 +1,6 @@
 package com.ceiba.orden.comando.fabrica;
 
 import com.ceiba.orden.comando.ComandoOrdenDetalle;
-import com.ceiba.persona.comando.fabrica.FabricaPersona;
 import com.ceiba.producto.comando.fabrica.FabricaProducto;
 import com.ceiba.usuario.modelo.entidad.ArticulosOrden;
 import org.springframework.stereotype.Component;
