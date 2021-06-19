@@ -9,12 +9,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class FabricaOrden {
     public Orden crear(ComandoOrden comandoOrden){
-
+        FabricaOrdenDetalle fabricaOrdenDetalle = new FabricaOrdenDetalle();
         return new Orden(
                 comandoOrden.getId(),
                 FabricaPersona.crear(comandoOrden.getPersona()),
                 comandoOrden.getFecha(),
-                FabricaOrdenDetalle.crear(comandoOrden.getListaDetalle())
+                fabricaOrdenDetalle.crear(comandoOrden.getListaDetalle())
                 );
     }
 }

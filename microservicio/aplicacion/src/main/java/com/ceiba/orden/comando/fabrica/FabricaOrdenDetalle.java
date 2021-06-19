@@ -11,8 +11,8 @@ import java.util.List;
 @Component
 public class FabricaOrdenDetalle {
 
-    private FabricaOrdenDetalle(){}
-    public static List<ArticulosOrden> crear(List<ComandoOrdenDetalle> listaComandoArticulosOrdenes) {
+
+    public  List<ArticulosOrden> crear(List<ComandoOrdenDetalle> listaComandoArticulosOrdenes) {
         List<ArticulosOrden> listaOrdenesDetalle = new ArrayList<>();
         FabricaProducto fabricaProducto = new FabricaProducto();
         listaComandoArticulosOrdenes.forEach(detalle ->
