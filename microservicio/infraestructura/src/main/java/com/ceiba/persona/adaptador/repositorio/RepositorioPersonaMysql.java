@@ -11,10 +11,13 @@ import org.springframework.stereotype.Repository;
 public class RepositorioPersonaMysql implements RepositorioPersona {
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
-
     public RepositorioPersonaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate){
         this.customNamedParameterJdbcTemplate=customNamedParameterJdbcTemplate;
     }
+
+    @SqlStatement(namespace="persona", value="existe")
+    private static String sqlExistePersona;
+    
     @SqlStatement(namespace="persona", value="crear")
     private static String sqlCrear;
 
@@ -22,10 +25,9 @@ public class RepositorioPersonaMysql implements RepositorioPersona {
     private static String sqlActualizar;
 
     @SqlStatement(namespace="persona", value="eliminar")
-    private static String sqlEliminar;
+    private static String sqlEliminarEliminarPersona;
 
-    @SqlStatement(namespace="persona", value="existe")
-    private static String sqlExiste;
+
 
     @Override
     public Long crear(Persona persona) {
@@ -49,7 +51,7 @@ public class RepositorioPersonaMysql implements RepositorioPersona {
     public boolean existe(String identificacion) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("identificacion", identificacion);
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste,paramSource, Boolean.class);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePersona,paramSource, Boolean.class);
 
     }
 }
