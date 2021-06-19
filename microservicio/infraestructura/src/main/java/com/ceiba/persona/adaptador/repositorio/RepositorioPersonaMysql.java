@@ -25,7 +25,7 @@ public class RepositorioPersonaMysql implements RepositorioPersona {
     private static String sqlActualizar;
 
     @SqlStatement(namespace="persona", value="eliminar")
-    private static String sqlEliminarEliminarPersona;
+    private static String sqlEliminarPersona;
 
 
 
@@ -43,7 +43,7 @@ public class RepositorioPersonaMysql implements RepositorioPersona {
     public void eliminar(Long id) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", id);
-        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
+        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminarPersona, paramSource);
 
     }
 
