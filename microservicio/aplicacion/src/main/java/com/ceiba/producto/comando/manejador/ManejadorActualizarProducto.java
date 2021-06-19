@@ -1,7 +1,7 @@
 package com.ceiba.producto.comando.manejador;
 
 import com.ceiba.producto.comando.ComandoProducto;
-import com.ceiba.producto.comando.Fabrica.FabricaProducto;
+import com.ceiba.producto.comando.fabrica.FabricaProducto;
 import com.ceiba.usuario.modelo.entidad.Producto;
 import com.ceiba.usuario.servicio.producto.ServicioActualizarProducto;
 import org.springframework.stereotype.Component;

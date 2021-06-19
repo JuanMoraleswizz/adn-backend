@@ -41,7 +41,6 @@ public class ComandoControladorProducto {
     @PutMapping(value="/{id}")
     @ApiOperation("Actualizar producto")
     public void actualizar(@RequestBody ComandoProducto comandoProducto,@PathVariable Long id) {
-        System.out.println("entro al service");
         comandoProducto.setId(id);
         manejadorActualizarProducto.ejecutar(comandoProducto);
     }

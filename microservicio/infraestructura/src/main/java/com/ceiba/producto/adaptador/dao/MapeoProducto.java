@@ -4,7 +4,6 @@ import com.ceiba.usuario.modelo.dto.DtoProducto;
 import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
 import com.ceiba.infraestructura.jdbc.MapperResult;
 
 public class MapeoProducto implements RowMapper<DtoProducto>, MapperResult  {

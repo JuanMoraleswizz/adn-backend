@@ -32,7 +32,6 @@ public class Producto {
         this.codigo = codigo;
         this.presentacion = presentacion;
         this.valorUnitario = valorUnitario;
-        this.valorUnitario = valorUnitario;
     }
 
 }

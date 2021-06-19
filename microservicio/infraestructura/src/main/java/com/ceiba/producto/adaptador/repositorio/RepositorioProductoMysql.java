@@ -11,6 +11,10 @@ import org.springframework.stereotype.Repository;
 public class RepositorioProductoMysql implements RepositorioProducto {
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
+    public RepositorioProductoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate){
+        this.customNamedParameterJdbcTemplate  =customNamedParameterJdbcTemplate;
+    }
+
     @SqlStatement(namespace="producto", value="crear")
     private static String sqlCrear;
 
@@ -22,13 +26,6 @@ public class RepositorioProductoMysql implements RepositorioProducto {
 
     @SqlStatement(namespace="producto", value="existe")
     private static String sqlExiste;
-
-    @SqlStatement(namespace="producto", value="existeExcluyendoId")
-    private static String sqlExisteExcluyendoId;
-
-    public RepositorioProductoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate){
-        this.customNamedParameterJdbcTemplate  =customNamedParameterJdbcTemplate;
-    }
 
     @Override
     public Long crear(Producto producto) {
