@@ -3,8 +3,6 @@ package com.ceiba.usuario.modelo.entidad;
 
 import com.ceiba.dominio.ValidadorArgumento;
 import lombok.Getter;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
