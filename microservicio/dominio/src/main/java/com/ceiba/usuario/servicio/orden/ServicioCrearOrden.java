@@ -5,6 +5,8 @@ import com.ceiba.usuario.modelo.entidad.ArticulosOrden;
 import com.ceiba.usuario.modelo.entidad.Orden;
 import com.ceiba.usuario.puerto.repositorio.RepositorioOrden;
 
+import java.time.DayOfWeek;
+import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.List;
 
@@ -22,13 +24,11 @@ public class ServicioCrearOrden {
     }
 
     private void validarPromocion(Orden orden) {
-        Calendar c = Calendar.getInstance();
-        c.set(orden.getFecha().getYear(),orden.getFecha().getMonthValue()-1, orden.getFecha().getDayOfMonth()); // vairables int
-        int dia =  c.get(Calendar.DAY_OF_WEEK);
-        if (dia == Calendar.FRIDAY){
+     DayOfWeek dia =  orden.getFecha().getDayOfWeek();
+        if ( dia== DayOfWeek.FRIDAY){
             debeTenerDescuento(orden.getListaArticulos());
         }
-        else if (dia == Calendar.TUESDAY){
+        else if (dia ==DayOfWeek.TUESDAY){
             debeTenerDescuento(orden.getListaArticulos());
         }
     }

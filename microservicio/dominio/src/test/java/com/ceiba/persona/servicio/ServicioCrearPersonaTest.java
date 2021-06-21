@@ -48,7 +48,7 @@ public class ServicioCrearPersonaTest {
         ServicioCrearPersona servicioCrearPersona = new ServicioCrearPersona(repositorioPersona);
         // act - assert
         Long act = servicioCrearPersona.ejecutar(persona);
-        //
+        //Assert
         Assert.assertEquals(java.util.Optional.of(1L),java.util.Optional.of(act));
     }
 

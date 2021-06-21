@@ -14,13 +14,13 @@ import com.ceiba.BasePrueba;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 public class ServicioActualizarProductoTest {
     @Test
-    public void validarPersonaExistenciaPreviaTest() {
+    public void validarProductoExistenciaPreviaTest() {
         // arrange
-        Persona persona = new PersonaTestDataBuilder().conIdentificacion("1038125422").build();
-        RepositorioPersona repositorioPersona = Mockito.mock(RepositorioPersona.class);
-        Mockito.when(repositorioPersona.existe(Mockito.anyString())).thenReturn(true);
-        ServicioActualizarPersona servicioActualizarPersona= new ServicioActualizarPersona(repositorioPersona);
+        Producto producto = new ProductoTestDataBuilder().build();
+        RepositorioProducto repositorioProducto= Mockito.mock(RepositorioProducto.class);
+        Mockito.when(repositorioProducto.existe(Mockito.anyString())).thenReturn(true);
+        ServicioActualizarProducto servicioActualizarProducto= new ServicioActualizarProducto(repositorioProducto);
         // act - assert
-        BasePrueba.assertThrows(() -> servicioActualizarPersona.ejecutar(persona), ExcepcionDuplicidad.class,"La Persona ya existe en el sistema");
+        BasePrueba.assertThrows(() -> servicioActualizarProducto.ejecutar(producto), ExcepcionDuplicidad.class,"El Producto ya existe en el sistema");
     }
 }
