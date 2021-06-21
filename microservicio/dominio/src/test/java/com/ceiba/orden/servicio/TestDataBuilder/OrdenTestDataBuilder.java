@@ -22,6 +22,9 @@ public class OrdenTestDataBuilder {
         persona = personaTestDataBuilder.build();
         fecha = LocalDateTime.now();
         listaArticulos = new ArrayList<>();
+        ArticulosOrdenTestDataBuilder articulosOrdenTestDataBuilder = new ArticulosOrdenTestDataBuilder();
+        ArticulosOrden articulo = articulosOrdenTestDataBuilder.build();
+        listaArticulos.add(articulo);
     }
 
     public OrdenTestDataBuilder conId(Long id){
@@ -36,6 +39,11 @@ public class OrdenTestDataBuilder {
     public OrdenTestDataBuilder conPersona(Persona persona){
         this.persona = persona;
         return this;
+    }
+
+    public OrdenTestDataBuilder conFecha(LocalDateTime fecha){
+        this.fecha = fecha;
+        return  this;
     }
 
     public Orden build(){

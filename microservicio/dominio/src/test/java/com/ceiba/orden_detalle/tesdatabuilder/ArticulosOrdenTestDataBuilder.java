@@ -24,8 +24,8 @@ public class ArticulosOrdenTestDataBuilder {
         this.valorUnitario = 1000.0;
         this.cantidad = 1.0;
         this.subTotal = 1000.0;
-        this.iva = 0.0;
-        this.descuento = 0.0;
+        this.iva = 1.0;
+        this.descuento = 1.0;
     }
 
     public ArticulosOrdenTestDataBuilder conId(Long id){
@@ -38,7 +38,7 @@ public class ArticulosOrdenTestDataBuilder {
         return this;
     }
     public ArticulosOrdenTestDataBuilder conValorIva(Double iva){
-        this.iva = valorUnitario;
+        this.iva = iva;
         return this;
     }
     public ArticulosOrdenTestDataBuilder conProducto(Producto producto){

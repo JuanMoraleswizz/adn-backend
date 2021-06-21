@@ -1,11 +1,17 @@
 package com.ceiba.orden_detalle;
 
 import com.ceiba.BasePrueba;
+import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ceiba.orden.servicio.TestDataBuilder.OrdenTestDataBuilder;
 import com.ceiba.orden_detalle.tesdatabuilder.ArticulosOrdenTestDataBuilder;
+import com.ceiba.persona.servicio.testdatabuilder.PersonaTestDataBuilder;
+import com.ceiba.usuario.modelo.entidad.Persona;
+import com.ceiba.usuario.puerto.repositorio.RepositorioPersona;
+import com.ceiba.usuario.servicio.persona.ServicioActualizarPersona;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 public class ServicioCrearOrdenDetalleTest {
 
@@ -32,4 +38,5 @@ public class ServicioCrearOrdenDetalleTest {
         BasePrueba.assertThrows(() -> articulosOrdenTestDataBuilder.build(), ExcepcionValorInvalido.class, "El valor no puede ser menor a 0");
 
     }
+
 }

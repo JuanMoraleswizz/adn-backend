@@ -12,13 +12,16 @@ import org.mockito.Mockito;
 public class ServicioCrearProductoTest {
 
     @Test
-    public void validarUsuarioExistenciaPreviaTest() {
+    public void validarExistenciaPreviaProductoTest() {
         // arrange
-        Producto producto = new ProductoTestDataBuilder().conCodigo("test").build();
+        Producto producto = new ProductoTestDataBuilder().build();
         RepositorioProducto repositorioProducto = Mockito.mock(RepositorioProducto.class);
         Mockito.when(repositorioProducto.existe(Mockito.anyString())).thenReturn(true);
         ServicioCrearProducto servicioCrearProducto = new ServicioCrearProducto(repositorioProducto);
+
         // act - assert
-        BasePrueba.assertThrows(() -> servicioCrearProducto.ejecutar(producto), ExcepcionDuplicidad.class,"La Persona ya existe en el sistema");
+        BasePrueba.assertThrows(() -> servicioCrearProducto.ejecutar(producto), ExcepcionDuplicidad.class,"El producto ya existe en el sistema");
     }
+
+
 }

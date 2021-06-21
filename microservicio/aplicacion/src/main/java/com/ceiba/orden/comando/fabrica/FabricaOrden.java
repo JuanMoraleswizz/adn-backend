@@ -10,9 +10,10 @@ import org.springframework.stereotype.Component;
 public class FabricaOrden {
     public Orden crear(ComandoOrden comandoOrden){
         FabricaOrdenDetalle fabricaOrdenDetalle = new FabricaOrdenDetalle();
+        FabricaPersona fabricaPersona = new FabricaPersona();
         return new Orden(
                 comandoOrden.getId(),
-                FabricaPersona.crear(comandoOrden.getPersona()),
+                fabricaPersona.crear(comandoOrden.getPersona()),
                 comandoOrden.getFecha(),
                 fabricaOrdenDetalle.crear(comandoOrden.getListaDetalle())
                 );

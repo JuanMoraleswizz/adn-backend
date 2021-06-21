@@ -15,6 +15,7 @@ public class ProductoTestDataBuilder {
         this.presentacion = "Por Libra";
         this.urlImagen = "../../../../../resource/Tomate.png";
         this.valorUnitario= 2000.0;
+        this.codigo = "test";
     }
 
     public ProductoTestDataBuilder conId(Long id){

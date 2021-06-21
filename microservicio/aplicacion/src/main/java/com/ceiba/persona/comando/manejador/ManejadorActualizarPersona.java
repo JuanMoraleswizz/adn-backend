@@ -9,12 +9,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class ManejadorActualizarPersona {
     private final ServicioActualizarPersona servicioActualizarPersona;
-
-    public ManejadorActualizarPersona( ServicioActualizarPersona servicioActualizarPersona){
+    private final FabricaPersona fabricaPersona;
+    public ManejadorActualizarPersona( ServicioActualizarPersona servicioActualizarPersona , FabricaPersona fabricaPersona){
         this.servicioActualizarPersona = servicioActualizarPersona;
+        this.fabricaPersona = fabricaPersona;
     }
     public void ejecutar(ComandoPersona comandoPersona) {
-        Persona persona = FabricaPersona.crear(comandoPersona);
+        Persona persona = fabricaPersona.crear(comandoPersona);
         this.servicioActualizarPersona.ejecutar(persona);
     }
 }
