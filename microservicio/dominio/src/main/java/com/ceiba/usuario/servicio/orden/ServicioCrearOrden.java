@@ -6,8 +6,6 @@ import com.ceiba.usuario.modelo.entidad.Orden;
 import com.ceiba.usuario.puerto.repositorio.RepositorioOrden;
 
 import java.time.DayOfWeek;
-import java.time.LocalDateTime;
-import java.util.Calendar;
 import java.util.List;
 
 
