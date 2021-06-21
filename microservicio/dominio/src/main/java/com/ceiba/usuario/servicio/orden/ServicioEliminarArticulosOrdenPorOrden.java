@@ -2,10 +2,10 @@ package com.ceiba.usuario.servicio.orden;
 
 import com.ceiba.usuario.puerto.repositorio.RepositorioOrden;
 
-public class ServicioEliminarOrdenDetallePorOrden {
+public class ServicioEliminarArticulosOrdenPorOrden {
     private final RepositorioOrden repositorioOrden;
 
-    public ServicioEliminarOrdenDetallePorOrden(RepositorioOrden repositorioOrden){
+    public ServicioEliminarArticulosOrdenPorOrden(RepositorioOrden repositorioOrden){
         this.repositorioOrden = repositorioOrden;
     }
 

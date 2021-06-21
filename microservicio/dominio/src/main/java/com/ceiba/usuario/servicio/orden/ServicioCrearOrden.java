@@ -17,21 +17,21 @@ public class ServicioCrearOrden {
     }
 
     public Long ejecutar(Orden orden){
-        validarPromocion(orden);
+        validarSiAplicaPromocion(orden);
         return this.repositorioOrden.crear(orden);
     }
 
-    private void validarPromocion(Orden orden) {
+    private void validarSiAplicaPromocion(Orden orden) {
      DayOfWeek dia =  orden.getFecha().getDayOfWeek();
         if ( dia== DayOfWeek.FRIDAY){
-            debeTenerDescuento(orden.getListaArticulos());
+            validaQueTengaAplicadoElDescuento(orden.getListaArticulos());
         }
         else if (dia ==DayOfWeek.TUESDAY){
-            debeTenerDescuento(orden.getListaArticulos());
+            validaQueTengaAplicadoElDescuento(orden.getListaArticulos());
         }
     }
 
-    private void debeTenerDescuento(List<ArticulosOrden> listaArticulos) {
+    private void validaQueTengaAplicadoElDescuento(List<ArticulosOrden> listaArticulos) {
         for (ArticulosOrden articulo :listaArticulos){
             if (articulo.getDescuento() <=4.0){
                 throw new ExcepcionDescuento(DEBE_TENER_DESCUENTO);

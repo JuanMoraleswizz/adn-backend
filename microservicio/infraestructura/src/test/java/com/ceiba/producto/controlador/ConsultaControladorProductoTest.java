@@ -17,7 +17,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes= ApplicationMock.class)
+@ContextConfiguration(classes = ApplicationMock.class)
 @WebMvcTest(ConsultaControladorProducto.class)
 public class ConsultaControladorProductoTest {
 
@@ -34,17 +34,20 @@ public class ConsultaControladorProductoTest {
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].nombre", is("producto1")));
+                .andExpect(jsonPath("$[0].nombre", is("producto1")))
+                .andExpect(jsonPath("$[0].codigo", is("test")));
 
 
     }
+
     @Test
     public void listarPorCodigo() throws Exception {
-        mocMvc.perform(get("/productos/{codigo}",codigo)
+        mocMvc.perform(get("/productos/{codigo}", codigo)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].nombre", is("producto1")));
+                .andExpect(jsonPath("$[0].nombre", is("producto1")))
+                .andExpect(jsonPath("$[0].codigo", is("test")));
     }
 
 }

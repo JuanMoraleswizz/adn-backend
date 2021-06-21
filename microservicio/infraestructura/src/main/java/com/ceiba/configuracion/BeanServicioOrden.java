@@ -23,7 +23,7 @@ public class BeanServicioOrden {
     }
 
     @Bean
-    public ServicioEliminarOrdenDetallePorOrden servicioEliminarOrdenPorOrden(RepositorioOrden repositorioOrden){
-        return  new ServicioEliminarOrdenDetallePorOrden(repositorioOrden);
+    public ServicioEliminarArticulosOrdenPorOrden servicioEliminarOrdenPorOrden(RepositorioOrden repositorioOrden){
+        return  new ServicioEliminarArticulosOrdenPorOrden(repositorioOrden);
     }
 }

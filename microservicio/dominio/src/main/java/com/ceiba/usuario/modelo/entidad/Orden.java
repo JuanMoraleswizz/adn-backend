@@ -4,6 +4,8 @@ package com.ceiba.usuario.modelo.entidad;
 import com.ceiba.dominio.ValidadorArgumento;
 import lombok.Getter;
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Getter
@@ -15,7 +17,7 @@ public class Orden {
     private Long id;
     private Persona persona;
     private LocalDateTime fecha;
-    private List<ArticulosOrden> listaArticulos;
+    private List<ArticulosOrden> listaArticulos = Arrays.asList();
 
     public Orden(Long id, Persona persona, LocalDateTime fecha,List<ArticulosOrden> listaArticulos){
         ValidadorArgumento.validarNoVacio(listaArticulos,LA_LISTA_NO_PUEDE_SER_VACIA);
