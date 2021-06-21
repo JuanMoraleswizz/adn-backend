@@ -28,7 +28,7 @@ public class ServicioCrearOrden {
         if (dia == Calendar.FRIDAY){
             debeTenerDescuento(orden.getListaArticulos());
         }
-        if (dia == Calendar.TUESDAY){
+        else if (dia == Calendar.TUESDAY){
             debeTenerDescuento(orden.getListaArticulos());
         }
     }
