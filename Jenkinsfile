@@ -6,12 +6,12 @@ pipeline {
     stages {
         stage("Compile") {
             steps {
-                sh "./gradlew compileJava"
+                sh "./microservicio/gradlew compileJava"
             }
         }
         stage("Unit test") {
             steps {
-                sh "./gradlew test"
+                sh "./microservicio/gradlew test"
             }
         }
         stage("Code coverage") {
@@ -22,13 +22,13 @@ pipeline {
          			reportFiles: 'index.html',
          			reportName: 'JacocoReport'
          	    ])
-         		sh "./gradlew jacocoTestCoverageVerification"
+         		sh "./microservicio/gradlew jacocoTestCoverageVerification"
          	}
         }
         stage('SonarQube analysis') {
             steps {
                 withSonarQubeEnv('SonarQubePruebas') {
-                    sh './gradlew sonarqube'
+                    sh './microservicio/gradlew sonarqube'
                 }
             }
         }
