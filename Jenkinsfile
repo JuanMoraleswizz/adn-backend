@@ -36,7 +36,7 @@ pipeline {
    
         stage('SonarQube analysis') {
             steps {
-                withSonarQubeEnv('sonarQubePruebas') {
+                withSonarQubeEnv('SonarQubePruebas') {
                     dir('microservicio') {
                      sh './gradlew sonarqube \
                     -Dsonar.login=9ef35a061a831e09ff6ea3ddf0721965a42e89a3'
