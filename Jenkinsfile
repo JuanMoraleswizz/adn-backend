@@ -6,31 +6,49 @@ pipeline {
     stages {
         stage("Compile") {
             steps {
-                sh "./microservicio/gradlew compileJava"
+                dir('microservicio') {
+                    sh "pwd"
+                     sh "./gradlew compileJava"
+                  }
             }
         }
-        stage("Unit test") {
-            steps {
-                sh "./microservicio/gradlew test"
+  stage("Unit test") {
+                steps {
+            dir('microservicio') {
+                    sh "pwd"
+                     sh "./gradlew test"
+                  }
+                }
             }
-        }
         stage("Code coverage") {
             steps {
+        	    dir('microservicio') {
         	    sh "./gradlew jacocoTestReport"
         	 	publishHTML (target: [
          	        reportDir: 'build/reports/jacoco/test/html',
          			reportFiles: 'index.html',
          			reportName: 'JacocoReport'
          	    ])
-         		sh "./microservicio/gradlew jacocoTestCoverageVerification"
+         		sh "./gradlew jacocoTestCoverageVerification"
+         		}
          	}
-        }
+         	}
+   
         stage('SonarQube analysis') {
             steps {
-                withSonarQubeEnv('SonarQubePruebas') {
-                    sh './microservicio/gradlew sonarqube'
+                withSonarQubeEnv('sonarQubePruebas') {
+                    dir('microservicio') {
+                   //  sh './gradlew sonarqube \
+                 //   -Dsonar.login=69e097e14061cf6ea52aa2151a09157b45b8378d'
+                       sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner  -Dproject.settings=sonar-project.properties"
+                     sh './gradlew sonarqube \
+                    -Dproject.settings=sonar-project.properties'
+                       //sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner  -Dproject.settings=sonar-project.properties"
+                    }
+
                 }
             }
         }
     }
 }
+
