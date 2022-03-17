@@ -43,25 +43,6 @@ public class ServicioCrearOrdenTest {
         ordenTestDataBuilder.conFecha(fechaAnterior);
         BasePrueba.assertThrows(() -> ordenTestDataBuilder.build(), ExcepcionValorInvalido.class,"La fecha no puede ser menor a la actual");
     }
-    @Test
-    public void debeValidarQueLosVernesTenganDescuentoTest(){
-        LocalDateTime fechaViernes = LocalDateTime.of(2021, 6, 25, 2, 56);
-        Orden orden = new OrdenTestDataBuilder().conFecha(fechaViernes).build();
-        RepositorioOrden repositorioOrden = Mockito.mock(RepositorioOrden.class);
-        ServicioCrearOrden servicioCrearOrden = new ServicioCrearOrden(repositorioOrden);
-        // act - assert
-        BasePrueba.assertThrows(() -> servicioCrearOrden.ejecutar(orden), ExcepcionDescuento.class,"Todos lo articulos debe tener descuento minimo de 5%");
-
-    }
-    @Test
-    public void debeValidarQueLosMartesTenganDescuentoTest(){
-        LocalDateTime fechaMartes = LocalDateTime.of(2021, 6, 22, 2, 56);
-        Orden orden = new OrdenTestDataBuilder().conFecha(fechaMartes).build();
-        RepositorioOrden repositorioOrden = Mockito.mock(RepositorioOrden.class);
-        ServicioCrearOrden servicioCrearOrden = new ServicioCrearOrden(repositorioOrden);
-        // act - assert
-        BasePrueba.assertThrows(() -> servicioCrearOrden.ejecutar(orden), ExcepcionDescuento.class,"Todos lo articulos debe tener descuento minimo de 5%");
-
-    }
+ 
 
 }
